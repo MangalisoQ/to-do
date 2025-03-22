@@ -1,23 +1,25 @@
 import { useState } from "react";
+import styles from "./NoteInput.module.css"
 
-export const NoteInput = () => {
+export const NoteInput = ({addNote}) => {
   const [note, setNote] = useState("");
 
-  const addNote=(e)=>{
+  const handleAddNote=(e)=>{
     e.preventDefault()
-    console.log(note);
+    addNote({ id: Date.now(), content: note });
     setNote("")
   }
 
   return (
-    <div>
-      <form onSubmit={addNote}>
+    <div className={styles.container}>
+      <form onSubmit={handleAddNote} className={styles.form}>
         <input
           name="noteInput"
           value={note}
           onChange={(e) => setNote(e.target.value)}
+          className={styles["note-input"]}
         />
-        <button >Add</button>
+        <button className={styles["add-btn"]}>Add</button>
       </form>
     </div>
   );
