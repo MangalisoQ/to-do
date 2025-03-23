@@ -14,3 +14,6 @@
 .delete-btn{
       padding: 3px 10px;
 }
+.delete-btn:hover{
+    cursor: pointer;
+}

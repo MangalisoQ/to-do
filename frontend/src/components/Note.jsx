@@ -3,7 +3,7 @@ import styles from "./Note.module.css";
 export const Note = ({ note, deleteNote }) => {
 
   return (
-    <li className={styles.container} key={note.id}>
+    <li className={styles.container} >
       <div>{note.content}</div>
       <button
         className={styles["delete-btn"]}
